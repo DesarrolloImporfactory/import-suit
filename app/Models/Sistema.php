@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Models\Permission;
+use App\Models\Suscripcion\Suscripcion;
 
 class Sistema extends Model
 {
@@ -21,11 +22,13 @@ class Sistema extends Model
         return $this->hasMany(Permission::class, 'sistema_id', 'id');
     }
 
-    public function suscripcion(){
-        return $this->hasMany(Suscripcion::class,'sistema_id','id');
+    public function suscripcion()
+    {
+        return $this->hasMany(Suscripcion::class, 'sistema_id', 'id');
     }
 
-    public function perfil(){
-        return $this->hasMany(Perfil::class,'sistema_id','id');
+    public function perfil()
+    {
+        return $this->hasMany(Perfil::class, 'sistema_id', 'id');
     }
 }

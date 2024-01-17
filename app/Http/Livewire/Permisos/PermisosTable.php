@@ -16,13 +16,13 @@ class PermisosTable extends Component
     public $search = '';
     public $sort = "id", $direction = "asc";
     protected $listeners = ['render' => 'render', 'delete'];
-    public $idPermiso, $name, $descripcion, $sistema_id="";
+    public $idPermiso, $name, $descripcion, $sistema_id = "";
 
     public function render()
     {
         $sistemas  = Sistema::all();
 
-        $permisos = Permission::with('sistemas')->where('name', 'like', '%' . $this->search . '%')
+        $permisos = Permission::with('sistemas')->where('name', 'like', '"%' . $this->search . '%"')
             ->orderBy($this->sort, $this->direction)
             ->paginate(10);
         return view('livewire.permisos.permisos-table', compact(['permisos', 'sistemas']));
@@ -62,7 +62,7 @@ class PermisosTable extends Component
     public function update()
     {
         $this->validate();
-        Permission::where('id',$this->idPermiso)->update([
+        Permission::where('id', $this->idPermiso)->update([
             'name' => $this->name,
             'description' => $this->descripcion,
             'sistema_id' =>  $this->sistema_id ?? ''

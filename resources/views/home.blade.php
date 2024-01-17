@@ -76,9 +76,9 @@
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
                                         <img style="width: 315px;" src="{{ asset('iconos/5.png') }}" alt="logo4">
-                                        <a type="button" href="https://marketplace.imporsuit.com/categoria.php"
+                                        <a type="button" href="https://marketplace.imporsuit.com/proveedores_imporsuit.php"
                                             class="btn" disabled>
-                                            <span class="m-1 letter-spacing" style="white-space: nowrap;">PRODUCTOS <i
+                                            <span class="m-1 letter-spacing" style="white-space: nowrap;">PROVEEDORES <i
                                                     class="fa fa-arrow-right ms-1"></i></span>
                                         </a>
                                     </div>
