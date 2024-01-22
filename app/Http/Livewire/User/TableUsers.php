@@ -23,6 +23,7 @@ class TableUsers extends Component
         'password' => 'required|string|min:8',
         'rol' => 'required',
         'url' => 'nullable|url',
+
     ];
 
     public function order($valor)
