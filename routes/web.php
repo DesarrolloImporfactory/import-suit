@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 
-
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -34,5 +33,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('redirect/app', RedirectsController::class)->names('redirect.app')->middleware('cotizador');
     Route::get('redirect/infoaduana', [RedirectsController::class, 'infoaduana'])->name('redirect.infoaduana')->middleware('infoaduana');
     Route::get('redirect/cursos', [RedirectsController::class, 'cursos'])->name('redirect.cursos')->middleware('cursos');
-    Route::resource('constructor',ConstructoresController::class)->names('constructor');
+    Route::resource('constructor', ConstructoresController::class)->names('constructor');
 });

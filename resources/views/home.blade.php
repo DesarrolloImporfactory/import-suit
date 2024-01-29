@@ -18,20 +18,12 @@
                         <div class=" rounded-3 mt-2">
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="row text-center">
-                                    @can("infoaduana.view")
                                     <img style="width: 315px;" src="{{ asset('iconos/1.png') }}" alt="logo4">
                                     <a type="button" href="{{ route('redirect.infoaduana') }}" class="btn">
                                         <span class="m-1 letter-spacing" style="white-space: nowrap;">INFOADUANA <i
                                                 class="fa fa-arrow-right ms-1"></i></span>
                                     </a>
-                                    @else
-                                    <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/1.png') }}" alt="logo4">
-
-                                    <a type="button" href="#" class="btn">
-                                        <span class="m-1 letter-spacing"
-                                            style="white-space: nowrap;">No disponible</span>
-                                    </a>
-                                @endcan
+                                   
                                 </div>
                             </div>
                         </div>
@@ -41,20 +33,12 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
-                                        @can("cotizador.view")
                                         <img style="width: 315px;" src="{{ asset('iconos/2.png') }}" alt="logo4">
                                         <a type="button" href="{{ route('redirect.app.create') }}" class="btn">
                                             <span class="m-1 letter-spacing" style="white-space: nowrap;">COTIZADOR <i
                                                     class="fa fa-arrow-right ms-1"></i></span>
                                         </a>
-                                        @else
-                                        <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/2.png') }}" alt="logo4">
-
-                                            <a type="button" href="#" class="btn">
-                                                <span class="m-1 letter-spacing"
-                                                    style="white-space: nowrap;">No disponible</span>
-                                            </a>
-                                        @endcan
+                                      
 
                                     </div>
                                 </div>
@@ -94,20 +78,13 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
-                                        @can("proveedor.view")
                                         <img style="width: 315px;" src="{{ asset('iconos/5.png') }}" alt="logo4">
                                         <a type="button" href="https://marketplace.imporsuit.com/proveedores_imporsuit.php"
                                             class="btn" disabled>
                                             <span class="m-1 letter-spacing" style="white-space: nowrap;">PROVEEDORES <i
                                                     class="fa fa-arrow-right ms-1"></i></span>
                                         </a>
-                                        @else
-                                        <img style="width: 315px; filter: grayscale(100%);  " src="{{ asset('iconos/5.png') }}" alt="logo4">
-                                        <a type="button" href="#" class="btn">
-                                            <span class="m-1 letter-spacing"
-                                                style="white-space: nowrap;">No disponible</span>
-                                        </a>
-                                    @endcan
+                                       
 
                                     </div>
                                 </div>
@@ -179,6 +156,7 @@
         </div>
         @if ($suscripcion != '0')
         <div class="alert alert-success">
+            {{ $suscripcion->nombre }}
             <span>Le quedan {{ $suscripcion->dias }} días para que su suscripción termine.</span>
         </div>
     @endif

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e621e802afc1c8e7dff9a58f5a2b3d78",
+    "content-hash": "afcde7b1ac377c14857c47a4bf2ded8e",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1418,6 +1418,72 @@
                 "source": "https://github.com/jeroennoten/Laravel-AdminLTE/tree/v3.9.2"
             },
             "time": "2023-08-25T17:01:05+00:00"
+        },
+        {
+            "name": "larabuild/optionbuilder",
+            "version": "1.1",
+            "dist": {
+                "type": "path",
+                "url": "packages/larabuild/optionbuilder",
+                "reference": "6f791a8cdac7533a97b6df869de8206be4017db4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Larabuild\\Optionbuilder\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Larabuild\\Optionbuilder\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "amentotech",
+                    "email": "info@amentotech.com"
+                }
+            ],
+            "description": "LaraBuild - Options/Settings builder allows the developers to generate a bunch of options/settings for their projects with a few clicks",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "larabuild/pagebuilder",
+            "version": "1.1",
+            "dist": {
+                "type": "path",
+                "url": "packages/larabuild/pagebuilder",
+                "reference": "fb852f4677717698770a9e68a0eab30cc6ad3b73"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Larabuild\\Pagebuilder\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Larabuild\\Pagebuilder\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "amentotech",
+                    "email": "info@amentotech.com"
+                }
+            ],
+            "description": "LaraBuild page builder allows developers to create any type of page based on user-defined blocks and dynamic settings.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "laravel/cashier",

@@ -51,7 +51,7 @@
                                     <tr>
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->sistemas->name ?? '' }}</td>
+                                        <td>{{ $item->sistema_name ?? '' }}</td>
                                         <td>{{ $item->description }}</td>
                                         <td style="width: 100px;">
                                             <div class="btn-group btn-group-sm" role="group"

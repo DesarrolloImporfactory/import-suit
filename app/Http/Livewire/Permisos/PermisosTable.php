@@ -14,7 +14,7 @@ class PermisosTable extends Component
 
     protected $paginationTheme = 'bootstrap';
     public $search = '';
-    public $sort = "id", $direction = "asc";
+    public $sort = "permissions.id", $direction = "asc";
     protected $listeners = ['render' => 'render', 'delete'];
     public $idPermiso, $name, $descripcion, $sistema_id = "";
 
@@ -22,9 +22,14 @@ class PermisosTable extends Component
     {
         $sistemas  = Sistema::all();
 
-        $permisos = Permission::with('sistemas')->where('name', 'like', '"%' . $this->search . '%"')
+        $permisos = Permission::select('permissions.*', 'sistemas.name as sistema_name')
+            ->join('sistemas', 'permissions.sistema_id', '=', 'sistemas.id')
+            ->where('permissions.name', 'LIKE', "%{$this->search}%")
+            ->orWhere('sistemas.name', 'LIKE', "%{$this->search}%") // Asegúrate de referenciar correctamente la tabla y columna en el filtro
             ->orderBy($this->sort, $this->direction)
             ->paginate(10);
+
+        // Imprimir la consulta SQL
         return view('livewire.permisos.permisos-table', compact(['permisos', 'sistemas']));
     }
 
@@ -51,12 +56,22 @@ class PermisosTable extends Component
 
     public function edit(int $idPermiso)
     {
-        $data = Permission::findOrFail($idPermiso);
-        $idSistema = Permission::with('sistemas')->where('id', $idPermiso)->first();
-        $this->sistema_id = $idSistema->sistemas->id ?? '';
+        $data = Permission::join('sistemas', 'permissions.sistema_id', '=', 'sistemas.id')
+            ->where('permissions.id', $idPermiso)
+            ->first(['permissions.*', 'sistemas.id as sistema_id']);
+
+        // Asegurar que se encontró el permiso
+        if (!$data) {
+            // Manejar el caso en que el permiso no se encuentra, por ejemplo:
+            session()->flash('error', 'Permiso no encontrado');
+            return;
+        }
+
+        // Asignar valores a las propiedades
         $this->idPermiso = $data->id;
         $this->name = $data->name;
         $this->descripcion = $data->description;
+        $this->sistema_id = $data->sistema_id;
     }
 
     public function update()

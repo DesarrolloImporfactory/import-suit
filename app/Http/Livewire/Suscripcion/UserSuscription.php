@@ -15,8 +15,8 @@ class UserSuscription extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
-    public $search = '', $estadoFilter,$dias;
-    public $cliente, $sistem,$idUser, $estado,$fecha_fin, $idSus, $estate, $usuarioWithSuscriptions = [];
+    public $search = '', $estadoFilter, $dias;
+    public $cliente, $sistem, $idUser, $estado, $fecha_fin, $idSus, $estate, $usuarioWithSuscriptions = [];
     public $sort = "id", $direction = "asc";
     public $sistems = [];
     protected $listeners = ['render' => 'render', 'destroy', 'show'];
@@ -48,7 +48,7 @@ class UserSuscription extends Component
             });
         }
         $suscripciones = $consulta->paginate(10);
-        return view('livewire.suscripcion.user-suscription', compact('suscripciones', 'sistemas','clientes'))->extends('adminlte::page')
+        return view('livewire.suscripcion.user-suscription', compact('suscripciones', 'sistemas', 'clientes'))->extends('adminlte::page')
             ->section('content');
     }
 
@@ -93,13 +93,13 @@ class UserSuscription extends Component
                     'usuario_id' => $this->cliente,
                     'sistema_id' => $sistemaId,
                     'estado' => $this->estado,
-                    'fecha_inicio' =>today()->toDateString(),
+                    'fecha_inicio' => today()->toDateString(),
                     'fecha_fin' => $fechaInicio->toDateString(),
                     'dias' => $this->dias
                 ]);
             }
             $this->emit('alert', 'Registro creado exitosamente!');
-            $this->reset(['cliente', 'sistem','estado','fecha_fin']);
+            $this->reset(['cliente', 'sistem', 'estado', 'fecha_fin']);
         } catch (\Exception $th) {
             $this->emit('alert', $th->getMessage());
         }
@@ -158,7 +158,7 @@ class UserSuscription extends Component
         } catch (\Exception $e) {
             $this->emit('alert', $e->getMessage());
         }
-        $this->reset(['cliente', 'sistem','estado','fecha_fin', 'idSus']);
+        $this->reset(['cliente', 'sistem', 'estado', 'fecha_fin', 'idSus']);
     }
 
     public function destroy(Int $id)

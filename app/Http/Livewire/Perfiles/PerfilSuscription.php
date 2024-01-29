@@ -16,10 +16,10 @@ class PerfilSuscription extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
-    public $search = '', $estadoFilter,$dias;
-    public $name, $name_id, $sistem,$idUser, $estado,$fecha_fin, $idSus, $estate, $usuarioWithSuscriptions = [];
+    public $search = '', $estadoFilter, $dias;
+    public $name, $name_id, $sistem, $idUser, $estado, $fecha_fin, $idSus, $estate, $usuarioWithSuscriptions = [];
     public $sort = "id", $direction = "asc";
-    public $clientes,$precio;
+    public $clientes, $precio;
     public $sistems = [];
     protected $listeners = ['render' => 'render', 'destroy', 'show'];
 
@@ -28,7 +28,7 @@ class PerfilSuscription extends Component
         $sistemas = Sistema::whereNotIn('id', [2])->get();
         $this->clientes = Name::all();
 
-        $consulta = Perfil::with('names','sistemas')
+        $consulta = Perfil::with('names', 'sistemas')
             ->whereHas('names', function ($query) {
                 $query->where('name', 'like', '%' . $this->search . '%');
             })
@@ -74,7 +74,7 @@ class PerfilSuscription extends Component
     {
         $this->validate([
             'name' => 'required',
-            'precio' =>'required|numeric|min:1'
+            'precio' => 'required|numeric|min:1'
         ]);
         try {
             Name::create([
@@ -82,7 +82,7 @@ class PerfilSuscription extends Component
                 'precio' => $this->precio
             ]);
             $this->emit('update', $this->clientes);
-            $this->reset(['name','precio']);
+            $this->reset(['name', 'precio']);
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
@@ -124,7 +124,7 @@ class PerfilSuscription extends Component
                 }
                 $this->sistems = [];
                 $this->emit('alert', 'Registro creado exitosamente!');
-                $this->reset(['name_id', 'sistem','estado','fecha_fin']);
+                $this->reset(['name_id', 'sistem', 'estado', 'fecha_fin']);
             }
         } catch (\Exception $th) {
             $this->emit('alert', $th->getMessage());
@@ -184,7 +184,7 @@ class PerfilSuscription extends Component
         } catch (\Exception $e) {
             $this->emit('alert', $e->getMessage());
         }
-        $this->reset(['name', 'sistem','estado','fecha_fin', 'idSus']);
+        $this->reset(['name', 'sistem', 'estado', 'fecha_fin', 'idSus']);
     }
 
     public function destroy(Int $id)

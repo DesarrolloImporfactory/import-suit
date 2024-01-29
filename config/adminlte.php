@@ -64,10 +64,10 @@ return [
     */
 
     'logo' => '',
-    'logo_img' => 'https://adminlte.io/docs/3.0/assets/img/logo-xl.png',
-    'logo_img_class' => 'brand-image-xs',
-    'logo_img_xl' => 'https://adminlte.io/docs/3.0/assets/img/logo-xl.png',
-    'logo_img_xl_class' => 'brand-image-xs',
+    'logo_img' => 'https://registro.imporsuit.com/imporsuit.png',
+    'logo_img_class' => 'brand-image-xs justify-center left-1/2',
+    'logo_img_xl' => 'https://registro.imporsuit.com/imporsuit.png',
+    'logo_img_xl_class' => 'brand-image-xs  justify-center left-1/2',
     'logo_img_alt' => null,
 
     /*
@@ -322,20 +322,20 @@ return [
             'icon' => 'fas fa-fw fa-chart-line',
         ],
         ['header' => 'account_settings'],
-        
+
         [
-            'text' => 'Users',
+            'text' => 'Usuarios',
             'route'  => 'users.index',
             'icon' => 'fas fa-fw fa-users',
             'can' => 'admin.users.index'
         ],
         [
-            'text' => 'Seting role',
+            'text' => 'Configurar Roles',
             'route'  => 'roles.index',
             'icon' => 'fas fa-fw fa-user-cog',
         ],
         [
-            'text' => 'Suscription',
+            'text' => 'Suscripciones',
             'url'  => 'admin/suscription',
             'icon' => 'fas fa-fw fa-address-book',
         ],
@@ -352,26 +352,11 @@ return [
             'icon' => 'fas fa-fw fa-truck-ramp-box',
         ],
         [
-            'text' => 'Template suscription',
+            'text' => 'Plantillas de suscripción',
             'url'  => 'admin/perfiles',
             'icon' => 'fas fa-fw fa-layer-group',
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+
     ],
 
     /*
