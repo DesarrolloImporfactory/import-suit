@@ -67,7 +67,6 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
-                                        @can('acceso-sistema',10)
                                         <img style="width: 315px;" src="{{ asset('iconos/6.png') }}" alt="logo4">
                                             <a type="button" href="{{auth()->user()->url}}" target="_blank" class="btn">
                                                 <span class="m-1 letter-spacing" style="white-space: nowrap;">TIENDA <i
@@ -77,14 +76,7 @@
                                                 <span class="m-1 letter-spacing" style="white-space: nowrap;">TIENDA <i
                                                         class="fa fa-arrow-right ms-1"></i></span>
                                             </a> --}}
-                                        @else
-                                        <img style="width: 315px; filter:grayscale(100%)" src="{{ asset('iconos/6.png') }}" alt="logo4">
-
-                                        <a type="button" href="#" class="btn">
-                                                <span class="m-1 letter-spacing"
-                                                style="white-space: nowrap;">NO DISPONIBLE</span>
-                                            </a>
-                                        @endcan
+        
                                     </div>
                                 </div>
                             </div>
@@ -123,8 +115,7 @@
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
                                         
-                                        @can('acceso-sistema', 11)
-                                        <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/7.png') }}" alt="logo4">
+                                        <img style="width: 315px;" src="{{ asset('iconos/7.png') }}" alt="logo4">
 
                                             <a type="button" href="{{auth()->user()->url.'/sysadmin/login.php'}}" target="_blank" class="btn"
                                                 disabled>
@@ -136,13 +127,7 @@
                                                 <span class="m-1 letter-spacing" style="">FACTURACIÓN ELECTRONICA <i
                                                         class="fa fa-arrow-right ms-1"></i></span>
                                             </a> --}}
-                                        @else
-                                        <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/7.png') }}" alt="logo4">
-
-                                            <a type="button" href="#" class="btn" disabled>
-                                                <span class="m-1 letter-spacing" style="">PROXIMAMENTE</span>
-                                            </a>
-                                        @endcan
+                                        
                                     </div>
                                 </div>
                             </div>
