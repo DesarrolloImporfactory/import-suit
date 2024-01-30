@@ -122,9 +122,9 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
-                                        <img style="width: 315px;" src="{{ asset('iconos/7.png') }}" alt="logo4">
-      
+                                        
                                         @can('acceso-sistema', 11)
+                                        <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/7.png') }}" alt="logo4">
 
                                             <a type="button" href="{{auth()->user()->url.'/sysadmin/login.php'}}" target="_blank" class="btn"
                                                 disabled>
@@ -137,6 +137,8 @@
                                                         class="fa fa-arrow-right ms-1"></i></span>
                                             </a> --}}
                                         @else
+                                        <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/7.png') }}" alt="logo4">
+
                                             <a type="button" href="#" class="btn" disabled>
                                                 <span class="m-1 letter-spacing" style="">PROXIMAMENTE</span>
                                             </a>
