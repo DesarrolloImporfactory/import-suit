@@ -18,7 +18,7 @@
                         <div class=" rounded-3 mt-2">
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="row text-center">
-                                    <@can("acceso-sistema",3)
+                                    @can("acceso-sistema",3)
                                     <img style="width: 315px;" src="{{ asset('iconos/1.png') }}" alt="logo4">
                                     <a type="button" href="{{ route('redirect.infoaduana') }}" class="btn">
                                         <span class="m-1 letter-spacing" style="white-space: nowrap;">INFOADUANA <i
@@ -55,6 +55,9 @@
                                                 style="white-space: nowrap;">NO DISPONIBLE</span>
                                             </a>
                                         @endcan
+
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
