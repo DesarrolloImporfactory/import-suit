@@ -18,12 +18,20 @@
                         <div class=" rounded-3 mt-2">
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="row text-center">
+                                    <@can("acceso-sistema",3)
                                     <img style="width: 315px;" src="{{ asset('iconos/1.png') }}" alt="logo4">
                                     <a type="button" href="{{ route('redirect.infoaduana') }}" class="btn">
                                         <span class="m-1 letter-spacing" style="white-space: nowrap;">INFOADUANA <i
                                                 class="fa fa-arrow-right ms-1"></i></span>
                                     </a>
-                                   
+                                    @else
+                                    <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/1.png') }}" alt="logo4">
+
+                                    <a type="button" href="#" class="btn">
+                                        <span class="m-1 letter-spacing"
+                                        style="white-space: nowrap;">NO DISPONIBLE</span>
+                                    </a>
+                                @endcan
                                 </div>
                             </div>
                         </div>
@@ -33,14 +41,20 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
+                                        @can("acceso-sistema",1)
                                         <img style="width: 315px;" src="{{ asset('iconos/2.png') }}" alt="logo4">
                                         <a type="button" href="{{ route('redirect.app.create') }}" class="btn">
                                             <span class="m-1 letter-spacing" style="white-space: nowrap;">COTIZADOR <i
                                                     class="fa fa-arrow-right ms-1"></i></span>
                                         </a>
-                                      
+                                        @else
+                                        <img style="width: 315px; filter: grayscale(100%);" src="{{ asset('iconos/2.png') }}" alt="logo4">
 
-                                    </div>
+                                            <a type="button" href="#" class="btn">
+                                                <span class="m-1 letter-spacing"
+                                                style="white-space: nowrap;">NO DISPONIBLE</span>
+                                            </a>
+                                        @endcan
                                 </div>
                             </div>
                         </div>
@@ -50,8 +64,8 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
+                                        @can('acceso-sistema',10)
                                         <img style="width: 315px;" src="{{ asset('iconos/6.png') }}" alt="logo4">
-                                        @can('tienda.view')
                                             <a type="button" href="{{auth()->user()->url}}" target="_blank" class="btn">
                                                 <span class="m-1 letter-spacing" style="white-space: nowrap;">TIENDA <i
                                                         class="fa fa-arrow-right ms-1"></i></span>
@@ -61,9 +75,11 @@
                                                         class="fa fa-arrow-right ms-1"></i></span>
                                             </a> --}}
                                         @else
-                                            <a type="button" href="#" class="btn">
+                                        <img style="width: 315px; filter:grayscale(100%)" src="{{ asset('iconos/6.png') }}" alt="logo4">
+
+                                        <a type="button" href="#" class="btn">
                                                 <span class="m-1 letter-spacing"
-                                                    style="white-space: nowrap;">PROXIMAMENTE</span>
+                                                style="white-space: nowrap;">NO DISPONIBLE</span>
                                             </a>
                                         @endcan
                                     </div>
@@ -78,13 +94,20 @@
                             <div class="container-fluid d-flex align-items-center justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
+                                        @can("acceso-sistema",9)
                                         <img style="width: 315px;" src="{{ asset('iconos/5.png') }}" alt="logo4">
                                         <a type="button" href="https://marketplace.imporsuit.com/proveedores_imporsuit.php"
                                             class="btn" disabled>
                                             <span class="m-1 letter-spacing" style="white-space: nowrap;">PROVEEDORES <i
                                                     class="fa fa-arrow-right ms-1"></i></span>
                                         </a>
-                                       
+                                        @else
+                                        <img style="width: 315px; filter: grayscale(100%);  " src="{{ asset('iconos/5.png') }}" alt="logo4">
+                                        <a type="button" href="#" class="btn">
+                                            <span class="m-1 letter-spacing"
+                                                style="white-space: nowrap;">NO DISPONIBLE</span>
+                                        </a>
+                                    @endcan
 
                                     </div>
                                 </div>
@@ -97,7 +120,9 @@
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
                                         <img style="width: 315px;" src="{{ asset('iconos/7.png') }}" alt="logo4">
-                                        @can('factura.view')
+      
+                                        @can('acceso-sistema', 11)
+
                                             <a type="button" href="{{auth()->user()->url.'/sysadmin/login.php'}}" target="_blank" class="btn"
                                                 disabled>
                                                 <span class="m-1 letter-spacing" style="">CONSTRUCTOR <i
