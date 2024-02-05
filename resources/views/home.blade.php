@@ -129,8 +129,8 @@ use Illuminate\Support\Str;
                                 <div class="d-flex justify-content-center">
                                     <div class="row text-center">
                                         
-                                        <img style="width: 315px;" src="{{ asset('iconos/7.png') }}" alt="logo4">
                                         @if(auth()->user()->url)
+                                        <img style="width: 315px;" src="{{ asset('iconos/7.png') }}" alt="logo4">
                                         @php
                                         $userUrl = auth()->user()->url;
                                         $finalUrl = Str::contains($userUrl, 'registro.imporsuit') ? $userUrl : $userUrl.'/sysadmin/login.php';
@@ -140,7 +140,14 @@ use Illuminate\Support\Str;
                                             <span class="m-1 letter-spacing" style="">CONSTRUCTOR <i
                                                     class="fa fa-arrow-right ms-1"></i></span>
                                         </a>
-                                    @endif
+                                        @else
+                                        <img style="width: 315px; filter: grayscale(100%);  " src="{{ asset('iconos/7.png') }}" alt="logo4">
+                                        <a type="button" href="#" class="btn">
+                                            <span class="m-1 letter
+                                                -spacing" style="white-space: nowrap;">NO DISPONIBLE</span>
+                                        </a>
+                                        
+                                        @endif
                                                                                    {{-- <a type="button" href="http://108.181.168.234/importshop/sysadmin" class="btn"
                                                 disabled>
                                                 <span class="m-1 letter-spacing" style="">FACTURACIÓN ELECTRONICA <i

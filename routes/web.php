@@ -9,6 +9,10 @@ use App\Models\User;
 
 
 Route::get('/', function () {
+    // determinar si el usuario esta autenticado
+    if (auth()) {
+        return redirect()->route('home');
+    }
     return view('auth.login');
 });
 
