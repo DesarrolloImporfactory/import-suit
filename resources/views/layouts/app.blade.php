@@ -60,6 +60,8 @@
                             <a href="{{ route('client.products') }}"
                                 class="nav-item nav-link {{ Request::is('client/products') ? 'active' : '' }}">Productos</a>
                         @endcan
+                        <a href="https://mstr.ly/tutoriales-imporsuit" class="nav-item nav-link">Tutoriales</a>
+
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -97,7 +99,6 @@
                                 </div>
                             </li>
                         @endguest
-                        <a href="https://mstr.ly/tutoriales-imporsuit" class="nav-item nav-link">Tutoriales</a>
 
                     </ul>
                 </div>
