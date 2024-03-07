@@ -97,6 +97,8 @@
                                 </div>
                             </li>
                         @endguest
+                        <a href="https://mstr.ly/tutoriales-imporsuit" class="nav-item nav-link">Tutoriales</a>
+
                     </ul>
                 </div>
             </div>
