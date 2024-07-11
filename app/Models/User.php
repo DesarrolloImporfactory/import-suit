@@ -12,6 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use App\Notifications\VerifyEmails;
 use App\Notifications\UserResetPassword;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Cashier\Billable;
 use function Illuminate\Events\queueable;
 
@@ -46,6 +47,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * Verifica si la contraseña dada coincide con la almacenada como MD5.
+     *
+     * @param string $password
+     * @return bool
+     */
+    public function checkPassword($password)
+    {
+        return Hash::check($password) === $this->password;
+    }
 
     public function suscripcion()
     {

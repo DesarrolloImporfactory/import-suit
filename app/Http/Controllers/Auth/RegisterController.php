@@ -11,20 +11,20 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    
+
 
     use RegistersUsers;
 
-   
+
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    
+
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-   
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -34,13 +34,13 @@ class RegisterController extends Controller
         ]);
     }
 
-   
+
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => md5($data['password']),
+            'password' => Hash::make($data['password']),
         ])->assignRole('Client');
     }
 }

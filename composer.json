@@ -8,8 +8,6 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.8",
         "jeroennoten/laravel-adminlte": "*",
-        "larabuild/optionbuilder": "*",
-        "larabuild/pagebuilder": "^1.1",
         "laravel/cashier": "^14.13",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",

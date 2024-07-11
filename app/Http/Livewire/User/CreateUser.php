@@ -9,6 +9,7 @@ use App\Models\Suscripcion\Suscripcion;
 use Livewire\Component;
 use App\Models\User;
 use App\Notifications\SendPassword;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Notification;
 
@@ -41,7 +42,7 @@ class CreateUser extends Component
                 'email' => $this->email,
                 'url' => $this->url,
                 'perfil_id' => $this->perfil,
-                'password' => md5($this->password)
+                'password' => Hash::make($this->password)
             ])->assignRole($this->rol);
             $usuario->notify(new SendPassword($this->password));
 

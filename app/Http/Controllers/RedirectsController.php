@@ -45,7 +45,7 @@ class RedirectsController extends Controller
 
             $sessionId = $request->session()->getId();
             // $otherAppUrl = 'http://infoaduana.com/admin/redirect/' . urlencode($sessionId);
-            $otherAppUrl = 'http://app.imporcomexcorp.com/admin/redirect/' . urlencode($sessionId);
+            $otherAppUrl = 'https://cursos.imporsuit.com/admin/redirect/' . urlencode($sessionId);
             return Redirect::away($otherAppUrl);
         } else {
             return redirect('/login')->with('mensaje', 'Por favor inicie sesión.');

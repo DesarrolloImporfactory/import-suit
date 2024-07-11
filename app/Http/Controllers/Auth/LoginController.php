@@ -19,12 +19,11 @@ class LoginController extends Controller
 
     public function redirectPath()
     {
-
         $id = auth()->user()->id;
         $newDate = Carbon::now();
 
         User::where('id', $id)->update(['session' => $newDate]);
-        
+
         User::where('id', $id)->update(['estado' => 'Activo']);
 
         return '/home';
