@@ -19,7 +19,7 @@ class RedirectsController extends Controller
     {
         if (Auth::check()) {
             $sessionId = $request->session()->getId();
-            $otherAppUrl = 'http://194.163.183.231:8090/admin/redirect/' . urlencode($sessionId);
+            $otherAppUrl = 'https://cotizador.imporsuit.app/admin/redirect/' . urlencode($sessionId);
             //$otherAppUrl = 'http://158.220.107.176:8080/admin/redirect/' . urlencode($sessionId);
             return Redirect::away($otherAppUrl);
         } else {
@@ -32,7 +32,7 @@ class RedirectsController extends Controller
         if (Auth::check()) {
             $sessionId = $request->session()->getId();
             // $otherAppUrl = 'http://infoaduana.com/admin/redirect/' . urlencode($sessionId);
-            $otherAppUrl = 'http://194.163.183.231:8080/admin/redirect/' . urlencode($sessionId);
+            $otherAppUrl = 'https://infoaduana.imporsuit.app/admin/redirect/' . urlencode($sessionId);
             return Redirect::away($otherAppUrl);
         } else {
             return redirect('/login')->with('mensaje', 'Por favor inicie sesión.');
@@ -45,7 +45,7 @@ class RedirectsController extends Controller
 
             $sessionId = $request->session()->getId();
             // $otherAppUrl = 'http://infoaduana.com/admin/redirect/' . urlencode($sessionId);
-            $otherAppUrl = 'https://cursos.imporsuit.com/admin/redirect/' . urlencode($sessionId);
+            $otherAppUrl = 'https://cursos.imporsuit.app/admin/redirect/' . urlencode($sessionId);
             return Redirect::away($otherAppUrl);
         } else {
             return redirect('/login')->with('mensaje', 'Por favor inicie sesión.');

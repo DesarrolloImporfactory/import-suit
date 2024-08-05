@@ -24,7 +24,7 @@ use Illuminate\Support\Str;
                             <div class="row text-center">
                                 @can("acceso-sistema",3)
                                 <img style="width: 315px;" src="{{ asset('iconos/1.png') }}" alt="logo4">
-                                <a type="button" href="{{ route('redirect.infoaduana') }}" class="btn">
+                                <a type="button" target="_blank" href="{{ route('redirect.infoaduana') }}" class="btn">
                                     <span class="m-1 letter-spacing" style="white-space: nowrap;">INFOADUANA <i
                                             class="fa fa-arrow-right ms-1"></i></span>
                                 </a>
@@ -47,7 +47,7 @@ use Illuminate\Support\Str;
                                 <div class="row text-center">
                                     @can("acceso-sistema",1)
                                     <img style="width: 315px;" src="{{ asset('iconos/2.png') }}" alt="logo4">
-                                    <a type="button" href="{{ route('redirect.app.create') }}" class="btn">
+                                    <a type="button" target="_blank" href="{{ route('redirect.app.create') }}" class="btn">
                                         <span class="m-1 letter-spacing" style="white-space: nowrap;">COTIZADOR <i
                                                 class="fa fa-arrow-right ms-1"></i></span>
                                     </a>
@@ -74,7 +74,7 @@ use Illuminate\Support\Str;
                                 <div class="row text-center">
                                     @can("acceso-sistema",10)
                                     <img style="width: 315px;" src="{{ asset('iconos/6.png') }}" alt="logo4">
-                                    <a type="button" href="{{auth()->user()->url}}" target="_blank" class="btn">
+                                    <a type="button" href="https://new.imporsuitpro.com" target="_blank" class="btn">
                                         <span class="m-1 letter-spacing" style="white-space: nowrap;">TIENDA <i
                                                 class="fa fa-arrow-right ms-1"></i></span>
                                     </a>
@@ -107,7 +107,7 @@ use Illuminate\Support\Str;
                                 <div class="row text-center">
                                     @can("acceso-sistema",9)
                                     <img style="width: 315px;" src="{{ asset('iconos/5.png') }}" alt="logo4">
-                                    <a type="button" href="https://marketplace.imporsuit.com/proveedores_imporsuit.php"
+                                    <a type="button" target="_blank" href="https://proveedores.imporsuitpro.com/"
                                         class="btn" disabled>
                                         <span class="m-1 letter-spacing" style="white-space: nowrap;">PROVEEDORES <i
                                                 class="fa fa-arrow-right ms-1"></i></span>
@@ -138,7 +138,7 @@ use Illuminate\Support\Str;
                                     $userUrl = auth()->user()->url;
                                     $finalUrl = Str::contains($userUrl, 'registro.imporsuit') ? $userUrl : $userUrl;
                                     @endphp
-                                    <a type="button" href="{{ $finalUrl }}" target="_blank" class="btn">
+                                    <a type="button" href="https://new.imporsuitpro.com" target="_blank" class="btn">
                                         <!-- Tu texto o ícono aquí -->
                                         <span class="m-1 letter-spacing" style="">CONSTRUCTOR <i
                                                 class="fa fa-arrow-right ms-1"></i></span>

@@ -56,11 +56,11 @@
 
                         {{-- <a href="https://help.imporfactoryusa.com/" class="nav-item nav-link">Tutoriales</a> --}}
                         <a href="{{ route('redirect.cursos') }}" class="nav-item nav-link">Cursos</a>
-                        @can('admin.dashboard')
+                      {{--   @can('admin.dashboard')
                             <a href="{{ route('client.products') }}"
                                 class="nav-item nav-link {{ Request::is('client/products') ? 'active' : '' }}">Productos</a>
-                        @endcan
-                        <a href="https://mstr.ly/tutoriales-imporsuit" class="nav-item nav-link">Tutoriales</a>
+                        @endcan --}}
+                        <a target="_blank" href="https://danielbonilla522-9.funnels.mastertools.com/" class="nav-item nav-link">Tutoriales</a>
 
                         @guest
                             @if (Route::has('login'))
