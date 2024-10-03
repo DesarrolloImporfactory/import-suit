@@ -64,10 +64,10 @@ return [
     */
 
     'logo' => '',
-    'logo_img' => 'https://registro.imporsuit.com/imporsuit.png',
-    'logo_img_class' => 'brand-image-xs justify-center left-1/2',
-    'logo_img_xl' => 'https://registro.imporsuit.com/imporsuit.png',
-    'logo_img_xl_class' => 'brand-image-xs  justify-center left-1/2',
+    'logo_img' => 'https://tiendas.imporsuitpro.com/imgs/LOGOS-IMPORSUIT.png',
+    'logo_img_class' => 'brand-image-xl justify-center left-1',
+    'logo_img_xl' => 'https://tiendas.imporsuitpro.com/imgs/LOGOS-IMPORSUIT.png',
+    'logo_img_xl_class' => 'brand-image-xl  justify-center left-1',
     'logo_img_alt' => null,
 
     /*
